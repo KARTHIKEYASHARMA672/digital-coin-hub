@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background: #f0f0f0;
+  color: #333;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #f1f1f1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.top-controls,
+.filter-controls,
+.settings-controls,
+.login-controls,
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.coin-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+}
+
+.coin {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.2);
+  transition: transform 0.3s;
+  position: relative;
+}
+
+body.light .coin {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.coin:hover {
+  transform: translateY(-5px);
+}
+
+.coin img {
+  width: 50px;
+  height: 50px;
+}
+
+.coin h2 {
+  font-size: 1.2rem;
+}
+
+.star {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.star.favorited {
+  color: gold;
+}
+
+.positive {
+  color: #00cc00;
+}
+
+.negative {
+  color: #ff3333;
+}
+
+#chart {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .top-controls,
+  .filter-controls,
+  .settings-controls,
+  .login-controls,
+  .chart-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coin-list {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
