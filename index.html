@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blockchain Coin Info App</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light">
+  <div class="container">
+    <h1>🌐 DigitalCoin Hub 🌐</h1>
+
+    <div class="top-controls">
+      <input type="text" id="search" placeholder="Search for a coin..." />
+      <button id="theme-toggle">🌙 Dark Mode</button>
+      <button id="show-watchlist">⭐ Watchlist</button>
+    </div>
+
+    <div class="filter-controls">
+      <button id="filter-gainers">📈 Top Gainers</button>
+      <button id="filter-losers">📉 Top Losers</button>
+      <button id="clear-filters">🔄 Clear Filters</button>
+    </div>
+
+    <div class="settings-controls">
+      <label for="currency">Currency:</label>
+      <select id="currency">
+        <option value="usd" selected>USD ($)</option>
+        <option value="eur">EUR (€)</option>
+        <option value="inr">INR (₹)</option>
+      </select>
+
+      <label for="sort">Sort By:</label>
+      <select id="sort">
+        <option value="market_cap_desc" selected>Market Cap ↓</option>
+        <option value="market_cap_asc">Market Cap ↑</option>
+        <option value="price_desc">Price ↓</option>
+        <option value="price_asc">Price ↑</option>
+        <option value="volume_desc">Volume ↓</option>
+        <option value="volume_asc">Volume ↑</option>
+      </select>
+    </div>
+
+    <div class="login-controls">
+      <input type="text" id="username" placeholder="Enter Username" />
+      <button id="login-btn">Login</button>
+      <span id="user-display"></span>
+    </div>
+
+    <div id="coin-list" class="coin-list"></div>
+
+    <div class="chart-controls">
+      <label for="time-range">Chart Time Range:</label>
+      <select id="time-range">
+        <option value="1">24h</option>
+        <option value="7" selected>7d</option>
+        <option value="30">30d</option>
+      </select>
+    </div>
+
+    <canvas id="chart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
